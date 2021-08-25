@@ -1,0 +1,68 @@
+/* #root {
+  width: 100vw;
+  height: 100vh;
+}
+
+.App {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  background-color: #282c34;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+}
+
+.formContainer {
+  height: 75%;
+  width: 35%;
+  display: flex;
+  flex-direction: column;
+}
+
+p {
+  font-size: medium;
+  color: white;
+  font: bold;
+}
+
+button,
+input[type="submit"],
+input[type="reset"] {
+  border: thin solid #444;
+  border-radius: 0.25rem;
+  padding: 0.5rem 1rem;
+  margin: 0 0.5rem 0 0;
+  display: inline-block;
+  background-color: #eee;
+  color: #444;
+  font-weight: bold;
+  font-size: 1rem;
+  line-height: 1;
+  text-transform: none;
+  text-decoration: none;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  border: thin solid #dedede;
+  border-radius: 0.25rem;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  outline: none;
+  display: block;
+  width: 100%;
+  font-size: 1rem;
+  line-height: 1;
+  background-color: transparent;
+}
+
+textarea {
+  font-family: inherit;
+  resize: none;
+} */

@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="output.css" />
+    <!-- linkeado a tailwind -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- linkeando iconos -->
+    <title>HyperPage</title>
+  </head>
+  <body class="m-0 p-0 w-screen overflow-x-hidden">
+    <style>
+      body {
+        height: 1250px;
+      }
+    </style>
+    
+    <style>
+      .displayTasks {
+        display: none;
+        transition: display 0.5 ease-out;
+      }
+      .moveBack {
+        transform: translate(0px, 0px);
+        transition: transform 0.5s ease-out;
+      }
+      .moveUp {
+        transform: translate(0px, -175px);
+        transition: transform 0.5s ease-out;
+      }
+    </style>
+    
+    <style>
+      .show {
+        display: block;
+      }
+    </style>
+    
+
+
+
+    <div id="allPage" class="container-xl relative w-full h-full block">
+
+    <!-- ----------------start-left-bar---------------- -->
+    <div id="left-bar" class="grid grid-rows-1 grid-cols-1 h-full w-52 ">
+      <div id="container-rigth-bar" class="row-span-1 bg-leftSideBar  flex flex-col">
+        <div id="logo" class="container h-14 w-26 flex items-center justify-center  ">
+          <img src="/HyperPage/static/img/logo.png" class=" h-4 w-30" alt="">
+        </div>
+        <ul class=" font-leftBarFont mx-6 my-3 ">
+          <li class="text-leftSideBarTxt h-10 w-30 text-xs font-bold mt-3">NAVIGATION</li>
+         
+          <li class="text-leftSideBarTxt h-10 w-30">
+            <a href="#" class="hover:text-hoverLeftSide">
+              <i class="fa fa-home fa-lg mr-2" aria-hidden="true"></i>
+              <span class="text-lg">DashBoard</span>
+              <span class="ml-3 p-0.5 px-1 rounded-sm bg-green-500 text-white">4</span>
+            </a>
+          </li>
+          <li class="mt-3 text-leftSideBarTxt h-10 w-30 text-xs font-bold">APPS</li>
+         
+          <li class="text-leftSideBarTxt h-10 w-30 text-xs font-bold">
+            <a href="#" class="hover:text-hoverLeftSide">
+              <i class="fa fa-calendar fa-lg mr-2" aria-hidden="true"></i>
+              <span class="text-lg font-normal">Calendar</span>
+            </a>      
+          </li>
+          <li class="text-leftSideBarTxt h-10 w-30 text-xs font-bold">
+            <a href="#" class="hover:text-hoverLeftSide">
+              <i class="fa fa-comments-o fa-lg mr-2" aria-hidden="true"></i>
+              <span class="text-lg font-normal">Chat</span>
+            </a>      
+          </li>
+          <li class="text-leftSideBarTxt h-10 w-30 text-xs font-bold">
+            <a href="#" class="hover:text-hoverLeftSide">
+              <i class="fa fa-university fa-lg mr-2" aria-hidden="true"></i>
+              <span class="text-lg font-normal">Ecommerce</span>
+              <i class="fa fa-angle-down pl-1 fa-lg " aria-hidden="true"></i>
+            </a>      
+          </li>
+          <li class="text-leftSideBarTxt h-10 w-30 text-xs font-bold">
+            <a href="#" class="hover:text-hoverLeftSide">
+              <i class="fa fa-envelope fa-lg mr-2" aria-hidden="true"></i>
+              <span class="text-lg font-normal">Email</span>
+            </a>      
+          </li>
+          <li class="text-leftSideBarTxt h-10 w-30 text-xs font-bold">
+            <a href="#" class="hover:text-hoverLeftSide">
+              <i class="fa fa-archive fa-lg mr-2" aria-hidden="true"></i>
+              <span class="text-lg font-normal">Projects</span>
+            </a>      
+          </li>
+          <li class="text-leftSideBarTxt h-10 w-30 text-xs font-bold">
+            <a href="#" class="hover:text-hoverLeftSide">
+              <i class="fa fa-wifi fa-lg mr-2" aria-hidden="true"></i>
+              <span class="text-lg font-normal">Social Feed</span>
+            </a>      
+          </li>
+          <li class="text-leftSideBarTxt h-10 w-30 text-xs font-bold">
+            <a href="#" class="hover:text-hoverLeftSide">
+              <i class="fa fa-tasks fa-lg mr-2" aria-hidden="true"></i>
+              <span class="text-lg font-normal">Tasks</span>
+            </a>      
+          </li>
+          <li class="text-leftSideBarTxt h-10 w-30 text-xs font-bold">
+            <a href="#" class="hover:text-hoverLeftSide">
+              <i class="fa fa-file-text fa-lg mr-2" aria-hidden="true"></i>
+              <span class="text-lg font-normal">File Manager</span>
+            </a>      
+          </li>
+          <li class="text-leftSideBarTxt h-10 w-30 text-xs font-bold mt-3">CUSTOM</li>
+          <li class="text-leftSideBarTxt h-10 w-30 text-xs font-bold">
+            <a href="#" class="hover:text-hoverLeftSide">
+              <i class="fa fa-columns fa-lg mr-2" aria-hidden="true"></i>
+              <span class="text-lg font-normal">Pages</span>
+            </a>      
+          </li>
+          <li class="text-leftSideBarTxt h-10 w-30 text-xs font-bold">
+            <a href="#" class="hover:text-hoverLeftSide">
+              <i class="fa fa-globe fa-lg mr-2" aria-hidden="true"></i>
+              <span class="text-lg font-normal ">Landing</span>
+              <span class="ml-6 text-gray-800 py-0.5 px-2 rounded-md bg-white">New</span>
+            </a>      
+          </li>
+          <li class="text-leftSideBarTxt h-10 w-30 text-xs font-bold">
+            <a href="#" class="hover:text-hoverLeftSide">
+              <i class="fa fa-laptop fa-lg mr-2" aria-hidden="true"></i>
+              <span class="text-lg font-normal">Layouts</span>
+            </a>      
+          </li>
+        </div>
+      </div>
+    <!-- ----------------end-left-bar---------------- -->
+          <!-- ----------------start-content-page---------------- -->
+
+
+
+    <div id="content-page" >
+      <div id="search-bar" class="absolute top-0 right-0 left-52 grid grid-cols-1 grid-rows-1 w-100 h-14">
+        <div id="search-bar-container" class="col-span-1 row-span-1 bg-white items-center w-100 h-12 relative">
+          <input type="text" class="absolute top-3 py-1 px-6 left-20 bg-searchInput text-center">
+          <button class="absolute top-3 left-80 shadow-lg rounded-sm bg-buttonColor h-8 w-20 text-white">Search</button>
+          <i class="fa fa-search fa-lg absolute top-5 left-24" aria-hidden="true"></i>
+          <ul class="absolute top-0 flex flex-row items-center right-0 w-1/3 justify-between h-14">
+            
+            
+            
+            <li class="h-10 w-24 flex flex-row items-center justify-between">
+              <button id="btn-lenguaje" class="h-8 w-32 items-center flex flex-row">
+                <img src="/HyperPage/static/USA.jpg" class=" h-3 w-4.5 pr-2">
+                <a href="#" class="text-gray-500 " >English</a>
+              </button>
+              
+              
+              <!-- dif language-content -->
+
+              <div id="language-content-dropdown" class="relative inline-block">
+                <i class="fa fa-angle-down pl-1 " aria-hidden="true"></i>
+                <div id="language-content" class="hidden rounded-lg absolute  bg-white top-10 right-0 w-40 shadow-md z-10 ">
+                  
+                  <div id="language-content-fluid" class="">
+
+                    <a href="" class="hover:bg-gray-100 flex flex-row items-center h-10">
+                      <img src="/HyperPage/static/img/germany.jpg" class="h-3 w-4.5 px-3">
+                      <span href="#" class="text-gray-500" >German</span>
+                    </a>
+                    <!-- item -->
+                    <a href="" class="hover:bg-gray-100 flex flex-row items-center h-10">
+                      <img src="/HyperPage/static/img/russia.jpg" class="h-3 w-4.5 px-3">
+                      <span href="#" class="text-gray-500" >Russian</span>
+                    </a>
+                    <!-- item -->
+                    <a href="" class="hover:bg-gray-100 flex flex-row items-center h-10">
+                      <img src="/HyperPage/static/img/spain.jpg" class="h-3 w-4.5 px-3">
+                      <span href="#" class="text-gray-500" >Spanish</span>
+                    </a>
+                    <!-- item -->
+                    <a href="" class="hover:bg-gray-100 flex flex-row items-center h-10">
+                      <img src="/HyperPage/static/img/italy.jpg" class="h-3 w-4.5 px-3">
+                      <span href="#" class="text-gray-500" >Italian</span>
+                    </a>
+                    <!-- item -->
+                  </div>
+                </div>
+              </div>
+ 
+            </li>
+            <li>
+              <a href="#" class="fa fa-bell" id="btn-notif"></a>
+              <div id="notification-dropdown" class="relative inline-block text-leftSideBarTxt">
+                <div id="notification-dropdown-container" class="hidden pt-2 h-80 w-80 bg-white rounded shadow absolute z-10 right-2 top-6">
+                  <div id="notification-title" class="px-5 h-12 w-full flex flex-row items-center justify-between">
+                    <span class="font-bold hover:text-black">Notification</span>
+                    <a class="text-xs hover:text-black" href="#">Clear All</a>
+                  </div>
+                  <div id="notification-list" class="h-56 w-full block overflow-hidden overflow-y-auto text-left text-leftSideBarTxt">
+                    <div id="notification-list-content" class="h-72 w-full grid grid-rows-6 truncate">
+                      <!-- item -->
+                      <a href="" class="hover:bg-gray-200 hover:text-black">
+                        <div class="h-full w-full flex flex-row items-center px-5">
+                          <img class="h-8 w-8 rounded-full" src="/HyperPage/static/img/avatar-4.jpg">
+                          <div class="pl-2">
+                            <p class="text-sm">Caleb Flakelar commented on Ad..</p>
+                            <p class="text-xs">1 min Ago</p>
+                          </div>
+                        </div>
+                      </a>
+                      <!-- item -->
+                      <a href="" class="hover:bg-gray-200 hover:text-black">
+                        <div class="h-full w-full flex flex-row items-center px-5 ">
+                          <span class="h-8 w-8 rounded-full bg-indigo-700 text-white flex items-center justify-center">
+                            <i class=" fa fa-pencil-square-o" aria-hidden="true"></i>
+                          </span>
+                            <div class="pl-2">
+                            <p class="text-sm">Eren Jaeger has edited his account</p>
+                            <p class="text-xs">55 min Ago</p>
+                          </div>
+                        </div>
+                      </a>
+                      <!-- item -->
+                      <a href="" class="hover:bg-gray-200 hover:text-black">
+                        <div class="h-full w-full flex flex-row items-center px-5 ">
+                          <span class="h-8 w-8 rounded-full bg-green-500 text-white flex items-center justify-center">
+                            <i class="fa fa-plus-circle" aria-hidden="true"></i>
+                          </span>
+                            <div class="pl-2 ">
+                            <p class="text-sm">Eren Jaeger has added a new friend</p>
+                            <p class="text-xs">107 min Ago</p>
+                          </div>
+                        </div>
+                      </a>
+                      <!-- item -->
+                      <a href="" class="hover:bg-gray-200 hover:text-black">
+                        <div class="h-full w-full flex flex-row items-center px-5">
+                          <span class="h-8 w-8 rounded-full bg-gray-700 text-white flex items-center justify-center ">
+                            <i class="fa fa-comment" aria-hidden="true"></i>
+                          </span>
+                            <div class="pl-2">
+                            <p class="text-sm">Eren Jaeger has commented</p>
+                            <p class="text-xs">55 min Ago</p>
+                          </div>
+                        </div>
+                      </a>
+                      <!-- item -->
+                      <a href="" class="hover:bg-gray-200 hover:text-black">
+                        <div class="h-full w-full flex flex-row items-center px-5">
+                          <img class="h-8 w-8 rounded-full" src="/HyperPage/static/img/logo.png">
+                          <div class="pl-2">
+                            <p class="text-sm">Arya Stark Liked on your photo</p>
+                            <p class="text-xs">1 min Ago</p>
+                          </div>
+                        </div>
+                      </a>
+                      <!-- item -->
+                      <a href="" class="hover:bg-gray-200 hover:text-black">
+                        <div class="h-full w-full flex flex-row items-center px-5">
+                          <img class="h-8 w-8 rounded-full" src="/HyperPage/static/img/avatar-2.jpg">
+                          <div class="pl-2">
+                            <p class="text-sm">Ichigo commented on your post</p>
+                            <p class="text-xs">1 min Ago</p>
+                          </div>
+                        </div>
+                      </a>
+                      <!-- item -->
+                    </div>
+                  </div>
+                  <div id="end-notification" class="h-10 w-full text-center justify-center flex flex-col hover:bg-gray-200 ">
+                    <a href="#" class="text-blue-300 hover:text-blue-500">View All</a>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li>
+              <a id="btn-apps" class="fa fa-th" href="#" >
+                <div id="apps-dropdown" class="relative inline-block">
+                  <div id="apps-dropdown-content" class="hidden text-leftSideBarTxt font-normal font-leftBarFont text-sm p-4 h-46 w-80 bg-white shadow rounded absolute top-4 right-2 z-20">
+                    <div class="flex flex-row flex-wrap h-40 w-72 ">
+                      <!-- item -->
+                      <div class="hover:bg-gray-200 h-20 w-24 items-center flex justify-center hover:text-black">
+                          <div class="flex flex-col items-center">
+                            <img src="/HyperPage/static/img/apps/app3.png" class="h-8 w-8" alt="">
+                            <span>Bitbucket</span>
+                          </div>
+                      </div>
+                      <!-- item -->
+                      <div class="hover:bg-gray-200 h-20 w-24 items-center flex justify-center hover:text-black">
+                        <div class=" flex flex-col items-center">
+                          <img src="/HyperPage/static/img/apps/app4.png" class="h-8 w-8" alt="">
+                          <span>Dribble</span>
+                        </div>
+                    </div>
+                      <!-- item -->
+                      <div class="hover:bg-gray-200 h-20 w-24 items-center flex justify-center hover:text-black">
+                        <div class="flex flex-col items-center">
+                          <img src="/HyperPage/static/img/apps/app5.png" class="h-8 w-8" alt="">
+                          <span>Slack</span>
+                        </div>
+                    </div>
+                      <!-- item -->
+                      <div class="hover:bg-gray-200 h-20 w-24 items-center flex justify-center hover:text-black">
+                        <div class="flex flex-col items-center">
+                          <img src="/HyperPage/static/img/apps/app6.png" class="h-8 w-8" alt="">
+                          <span>GitHub</span>
+                        </div>
+                    </div>
+                      <!-- item -->
+                      <div class="hover:bg-gray-200 h-20 w-24 items-center flex justify-center hover:text-black">
+                        <div class="flex flex-col items-center">
+                          <img src="/HyperPage/static/img/apps/app2.png" class="h-8 w-8" alt="">
+                          <span>Google</span>
+                        </div>
+                    </div>
+                      <!-- item -->
+                      <div class="hover:bg-gray-200 h-20 w-24 items-center flex justify-center hover:text-black">
+                        <div class="flex flex-col items-center">
+                          <img src="/HyperPage/static/img/apps/app1.png" class="h-8 w-8" alt="">
+                          <span>Dropbox</span>
+                        </div>
+                    </div>                    
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a class="fa fa-cog" ></a>
+            </li>
+            <li class="mr-5">
+              <button id="account-container" class="focus:outline-none h-14 w-40 bg-accountColor relative hover:shadow-md">
+                <img src="/HyperPage/static/img/profile.jpg" class="rounded-full h-8 w-8 ml-1 absolute top-3 " alt="">
+                <h1 class="font-bold text-nameAccountColor text-sm mr-1 absolute top-2 left-10 ">Tomas Brasca</h1>                
+                <p class="text-nameAccountColor text-xs  absolute top-7 left-14">Manager</p>
+              </button>
+              <div id="account-dropdown" class="hidden relative text-leftSideBarTxt font-leftBarFont">
+                <div id="account-dropdown-content" class=" absolute left-0  w-40 h-64 grid grid-rows-6 bg-white shadow rounded z-10">
+                  <span class="text-left p-4">Welcome!</span>
+                  <a href="#" class="p-4 hover:bg-gray-200 hover:text-black">
+                    <i class="fa fa-user-circle" aria-hidden="true"></i>
+                    <span>My Account</span>
+                  </a>
+                  <a href="#" class="p-4 hover:bg-gray-200 hover:text-black">
+                    <i class="fa fa-pencil-square" aria-hidden="true"></i>
+                    <span>Edit Accout</span>
+                  </a>
+                  <a href="#" class="p-4 hover:bg-gray-200 hover:text-black">
+                    <i class="fa fa-life-ring" aria-hidden="true"></i>
+                    <span>Support</span>
+                  </a>
+                  <a href="#" class="p-4 hover:bg-gray-200 hover:text-black">
+                    <i class="fa fa-lock" aria-hidden="true"></i>
+                    <span>Lock Screen</span>
+                  </a>
+                  <a href="#" class="p-4 hover:bg-gray-200 hover:text-black flex-row">
+                    <i class="fa fa-sign-out" aria-hidden="true"></i>
+                    <span>Logout</span>
+                  </a>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div id="dashboard" class="flex flex-row justify-between absolute bottom-0 top-14 right-0 left-52  bg-back h-100 w-100">
+        <div id="content-fluid" class="w-2/3 h-full ml-8 top-10">
+          <div id="content-title" class="h-24 w-full flex flex-row items-center justify-between text-contentTitlePage">
+            <div id="tasks-btn" class="">
+              <span class="pr-4 text-lg font-bold">Tasks</span>
+              <button class="h-8 w-24 rounded-sm shadow-lg bg-green-400 hover:bg-green-600 text-white">Add New</button>
+            </div>
+            <div id="input-tasks" class="h-full w-1/3 flex justify-end items-center" >
+              <i class="fa fa-search fa-lg py-2 pl-1 bg-searchInput" aria-hidden="true"></i>
+              <input class="py-1 px-4 bg-searchInput outline-none" type="text" placeholder="Search...">
+              <button class="opacity-70 hover:opacity-100 h-8 w-16 shadow-lg bg-contentTitlePage text-white">
+                <i class="fa fa-caret-down" aria-hidden="true"></i>
+              </button>
+            </div>
+          </div>
+          <div id="tasks-content" class=" h-60 w-full">
+            <a id="btn-content-tasks" href="#" class="text-lg font-bold text-black">
+              <i class="fa fa-angle-down" aria-hidden="true"></i>
+              <span>Today</span>
+              <span class="text-contentTitlePage opacity-80 text-2sm">(10)</span>
+            </a>
+            <div id="content-block" class="pt-4 flex flex-col justify-between">
+              <div id="content-block-container-tasks" class=" h-44 w-full rounded-md shadow-sm bg-white">
+                  <ul id="tasks-rows" class="flex flex-col justify-between  h-full w-full p-4 text-contentTitlePage">
+                    <li class="flex flex-row h-1/3 w-full items-center">
+                      <div id="li-content" class="flex flex-row h-full w-full justify-between items-center">
+                        <div id="desc-task" class="relative">
+                          <input type="checkbox" name="" class="h-6 absolute">
+                          <label class="pl-6 text-md">Draft the new contract document for sales team</label>
+                        </div>
+                        <img src="/HyperPage/static/img/profile.jpg" class="h-6 w-6 rounded-full">
+                        <div id="info-task" class="h-1/3 w-1/4 items-center flex flex-row justify-between text-xs">
+                          <i class="fa fa-calendar" aria-hidden="true"></i>
+                          <span class="">Today 10am</span>
+                          <i class="fa fa-file-text-o" aria-hidden="true"></i>
+                          <span>3/7</span>
+                          <i class="fa fa-comment" aria-hidden="true"></i>
+                          <span>21</span>
+                          <span class="py-1 px-2 text-center rounded-md bg-highSpan text-xs text-red-500">High</span>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="flex flex-row h-1/3 w-full items-center">
+                      <div id="li-content" class="flex flex-row h-full w-full justify-between items-center">
+                        <div id="desc-task" class="relative">
+                          <input type="checkbox" name="" class="h-6 absolute">
+                          <label class="pl-6 text-md">Draft the new contract document for sales team</label>
+                        </div>
+                        <img src="/HyperPage/static/img/avatar-4.jpg" class="h-6 w-6 rounded-full">
+                        <div id="info-task" class="h-1/3 w-1/4 items-center flex flex-row justify-between text-xs">
+                          <i class="fa fa-calendar" aria-hidden="true"></i>
+                          <span class="">Today 10am</span>
+                          <i class="fa fa-file-text-o" aria-hidden="true"></i>
+                          <span>3/7</span>
+                          <i class="fa fa-comment" aria-hidden="true"></i>
+                          <span>21</span>
+                          <span class="py-1 px-2 text-center rounded-md bg-mediumSpan text-xs text-blue-400">Medium</span>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="flex flex-row h-1/3 w-full items-center">
+                      <div id="li-content" class="flex flex-row h-full w-full justify-between items-center">
+                        <div id="desc-task" class="relative">
+                          <input type="checkbox" name="" class="h-6 absolute">
+                          <label class="pl-6 text-md">Draft the new contract document for sales team</label>
+                        </div>
+                        <img src="/HyperPage/static/img/avatar-2.jpg" class="h-6 w-6 rounded-full">
+                        <div id="info-task" class="h-1/3 w-1/4 items-center flex flex-row justify-between text-xs">
+                          <i class="fa fa-calendar" aria-hidden="true"></i>
+                          <span class="">Today 10am</span>
+                          <i class="fa fa-file-text-o" aria-hidden="true"></i>
+                          <span>3/7</span>
+                          <i class="fa fa-comment" aria-hidden="true"></i>
+                          <span>21</span>
+                          <span class="py-1 px-2 text-center rounded-md bg-lowSpan text-xs text-green-400">Low</span>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+              </div>
+            </div>
+          </div>
+          <div id="tasks-content-friday" class="h-60 w-full">
+            <a href="#" class="text-lg font-bold text-black">
+              <i class="fa fa-angle-down" aria-hidden="true"></i>
+              <span>Friday</span>
+              <span class="text-contentTitlePage opacity-80 text-2sm">(10)</span>
+            </a>
+            <div id="content-block" class="pt-4 flex flex-col justify-between">
+              <div id="content-block-container" class=" h-44 w-full rounded-md shadow-sm bg-white">
+                  <ul id="tasks-rows" class="flex flex-col justify-between  h-full w-full p-4 text-contentTitlePage">
+                    <li class="flex flex-row h-1/3 w-full items-center">
+                      <div id="li-content" class="flex flex-row h-full w-full justify-between items-center">
+                        <div id="desc-task" class="relative">
+                          <input type="checkbox" name="" class="h-6 absolute">
+                          <label class="pl-6 text-md">Draft the new contract document for sales team</label>
+                        </div>
+                        <img src="/HyperPage/static/img/profile.jpg" class="h-6 w-6 rounded-full">
+                        <div id="info-task" class="h-1/3 w-1/4 items-center flex flex-row justify-between text-xs">
+                          <i class="fa fa-calendar" aria-hidden="true"></i>
+                          <span class="">Today 10am</span>
+                          <i class="fa fa-file-text-o" aria-hidden="true"></i>
+                          <span>3/7</span>
+                          <i class="fa fa-comment" aria-hidden="true"></i>
+                          <span>21</span>
+                          <span class="py-1 px-2 text-center rounded-md bg-highSpan text-xs text-red-500">High</span>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="flex flex-row h-1/3 w-full items-center">
+                      <div id="li-content" class="flex flex-row h-full w-full justify-between items-center">
+                        <div id="desc-task" class="relative">
+                          <input type="checkbox" name="" class="h-6 absolute">
+                          <label class="pl-6 text-md">Draft the new contract document for sales team</label>
+                        </div>
+                        <img src="/HyperPage/static/img/avatar-4.jpg" class="h-6 w-6 rounded-full">
+                        <div id="info-task" class="h-1/3 w-1/4 items-center flex flex-row justify-between text-xs">
+                          <i class="fa fa-calendar" aria-hidden="true"></i>
+                          <span class="">Today 10am</span>
+                          <i class="fa fa-file-text-o" aria-hidden="true"></i>
+                          <span>3/7</span>
+                          <i class="fa fa-comment" aria-hidden="true"></i>
+                          <span>21</span>
+                          <span class="py-1 px-2 text-center rounded-md bg-mediumSpan text-xs text-blue-400">Medium</span>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="flex flex-row h-1/3 w-full items-center">
+                      <div id="li-content" class="flex flex-row h-full w-full justify-between items-center">
+                        <div id="desc-task" class="relative">
+                          <input type="checkbox" name="" class="h-6 absolute">
+                          <label class="pl-6 text-md">Draft the new contract document for sales team</label>
+                        </div>
+                        <img src="/HyperPage/static/img/avatar-2.jpg" class="h-6 w-6 rounded-full">
+                        <div id="info-task" class="h-1/3 w-1/4 items-center flex flex-row justify-between text-xs">
+                          <i class="fa fa-calendar" aria-hidden="true"></i>
+                          <span class="">Today 10am</span>
+                          <i class="fa fa-file-text-o" aria-hidden="true"></i>
+                          <span>3/7</span>
+                          <i class="fa fa-comment" aria-hidden="true"></i>
+                          <span>21</span>
+                          <span class="py-1 px-2 text-center rounded-md bg-lowSpan text-xs text-green-400">Low</span>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+              </div>
+            </div>
+          </div>
+          <div id="tasks-content-up" class="h-60 w-full">
+            <a href="#" class="text-lg font-bold text-black">
+              <i class="fa fa-angle-down" aria-hidden="true"></i>
+              <span>Upcoming</span>
+              <span class="text-contentTitlePage opacity-80 text-2sm">(10)</span>
+            </a>
+            <div id="content-block" class="pt-4 flex flex-col justify-between">
+              <div id="content-block-container" class=" h-44 w-full rounded-md shadow-sm bg-white">
+                  <ul id="tasks-rows" class="flex flex-col justify-between  h-full w-full p-4 text-contentTitlePage">
+                    <li class="flex flex-row h-1/3 w-full items-center">
+                      <div id="li-content" class="flex flex-row h-full w-full justify-between items-center">
+                        <div id="desc-task" class="relative">
+                          <input type="checkbox" name="" class="h-6 absolute">
+                          <label class="pl-6 text-md">Draft the new contract document for sales team</label>
+                        </div>
+                        <img src="/HyperPage/static/img/profile.jpg" class="h-6 w-6 rounded-full">
+                        <div id="info-task" class="h-1/3 w-1/4 items-center flex flex-row justify-between text-xs">
+                          <i class="fa fa-calendar" aria-hidden="true"></i>
+                          <span class="">Today 10am</span>
+                          <i class="fa fa-file-text-o" aria-hidden="true"></i>
+                          <span>3/7</span>
+                          <i class="fa fa-comment" aria-hidden="true"></i>
+                          <span>21</span>
+                          <span class="py-1 px-2 text-center rounded-md bg-highSpan text-xs text-red-500">High</span>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="flex flex-row h-1/3 w-full items-center">
+                      <div id="li-content" class="flex flex-row h-full w-full justify-between items-center">
+                        <div id="desc-task" class="relative">
+                          <input type="checkbox" name="" class="h-6 absolute">
+                          <label class="pl-6 text-md">Draft the new contract document for sales team</label>
+                        </div>
+                        <img src="/HyperPage/static/img/avatar-4.jpg" class="h-6 w-6 rounded-full">
+                        <div id="info-task" class="h-1/3 w-1/4 items-center flex flex-row justify-between text-xs">
+                          <i class="fa fa-calendar" aria-hidden="true"></i>
+                          <span class="">Today 10am</span>
+                          <i class="fa fa-file-text-o" aria-hidden="true"></i>
+                          <span>3/7</span>
+                          <i class="fa fa-comment" aria-hidden="true"></i>
+                          <span>21</span>
+                          <span class="py-1 px-2 text-center rounded-md bg-mediumSpan text-xs text-blue-400">Medium</span>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="flex flex-row h-1/3 w-full items-center">
+                      <div id="li-content" class="flex flex-row h-full w-full justify-between items-center">
+                        <div id="desc-task" class="relative">
+                          <input type="checkbox" name="" class="h-6 absolute">
+                          <label class="pl-6 text-md">Draft the new contract document for sales team</label>
+                        </div>
+                        <img src="/HyperPage/static/img/avatar-2.jpg" class="h-6 w-6 rounded-full">
+                        <div id="info-task" class="h-1/3 w-1/4 items-center flex flex-row justify-between text-xs">
+                          <i class="fa fa-calendar" aria-hidden="true"></i>
+                          <span class="">Today 10am</span>
+                          <i class="fa fa-file-text-o" aria-hidden="true"></i>
+                          <span>3/7</span>
+                          <i class="fa fa-comment" aria-hidden="true"></i>
+                          <span>21</span>
+                          <span class="py-1 px-2 text-center rounded-md bg-lowSpan text-xs text-green-400">Low</span>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <style>
+          #rigth-box-fluid {
+            height: 1180px;
+          }
+        </style>
+        <div id="rigth-box-fluid" class=" w-1/4 bg-white shadow-sm opacity-90">
+        
+          <div id="content-rigth" class="text-contentTitlePage w-full h-full">
+            <div id="title-box" class="text-contentTitlePage flex flex-row items-center justify-between">
+              <div class="pl-6">
+                <input class="mr-3" type="checkbox">
+                <span class="font-semibold">Mark as complete</span>
+              </div>
+              <i class="fa fa-ellipsis-h py-6 px-6" aria-hidden="true"></i>              
+            </div>
+            <hr>
+            <h1 class="font-bold text-md py-4 px-6">Draft the new contract document for sales team</h1>
+
+            <div class="mt-2 w-full h-42 grid grid-cols-2 ">
+                <div id="row1" class="flex flex-row mt-4 ml-2">
+                  <div class="h-20 w-full relative ml-2">
+                    <span class="text-sm text-gray-400 font-semibold">Assigned To</span>
+                    <img class="h-8 w-8 mt-2 rounded-full" src="/HyperPage/static/img/profile.jpg">
+                    <span class="absolute left-10 bottom-6 text-sm font-semibold text-contentTitlePage">Tomas Brasca</span>
+                  </div>
+                </div>
+                <div id="row2" class="flex flex-col mt-4 ml-2">
+                  <div class="h-20 w-full relative ">
+                    <span class="text-sm text-gray-400 font-semibold">Due Date</span>
+                    <div class="absolute top-8">
+                      <i class="fa fa-calendar text-green-500 " aria-hidden="true"></i>
+                      <span class="pl-2 font-bold text-contentTitlePage text-sm">Today 10am</span>
+                    </div>
+                  </div>
+                </div>
+            </div>
+            
+            <div id="text-inp" class="w-full h-34">
+              <!-- <input type="text" class="m-4 py-10 px-28"> -->
+              <div class="m-4 border-gray-400 border rounded" contenteditable="true" role="textbox" aria-multiline="true" spellcheck="true" autocorrect="true">
+                <div id="text-editable-content" class="my-4 mx-6 text-2sm">
+                  <p class="font-bold">This is a task description with markup support</p>
+                  <ul>
+                    <li class="list-disc">Select a text to reveal the toolbar.</li>
+                    <li class="list-disc">Edit rich document on-the-fly, so elastic!</li>
+                  </ul>
+                  <p>End of air-mode area</p>
+                </div>
+              </div>
+            </div>
+            <div id="checklist-rigth" class="w-full h-32">
+              <div id="checklist-rigth-content" class="my-6 mx-4 text-gray-800">
+                <h1 class="font-semibold text-md ">Checklist/Sub-tasks</h1>
+                <div id="tasks-rigth" class="text-md">
+                  <div class="flex flex-row items-center">
+                    <input type="checkbox">
+                    <span class="pl-2">Find out the old contract documents.</span>
+                  </div>
+                  <div class="flex flex-row items-center">
+                    <input type="checkbox">
+                    <span class="pl-2">Organize meeting sales associates to understand need in detail.
+                      </span>
+                  </div>
+                  <div class="flex flex-row items-center">
+                    <input type="checkbox">
+                    <span class="pl-2">Make sure to cover every small details.</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div id="attachemnts" class="w-full">
+              <div id="attachemnts-container" class="m-4">
+                <h1 class="text-gray-900 font-bold">Attachments</h1>
+                <div id="download-files-card" class="flex-col flex justify-between mt-2 h-36 w-full">
+                  <div class=" h-16 w-full border border-gray-400 rounded items-center flex flex-row">
+                    <div class="m-2 h-12 w-12 bg-blue-700 rounded text-center relative">
+                      <span class="text-white absolute left-1/4 bottom-1/4">.ZIP</span>
+                    </div>
+                    <div id="info-download">
+                      <a href="#" class="font-bold">
+                        sales-assets.zip</a>
+                        <p>2.3 MB</p>
+                    </div>
+                    <div id="btn-download" class="pl-40">
+                      <button class="mr-1"><i class="fa fa-download fa-lg" aria-hidden="true"></i></button>
+                      <button class=""><i class="fa fa-times fa-lg text-red-600" aria-hidden="true"></i></button>
+                    </div>
+                  </div>
+                  <div class=" h-16 w-full border border-gray-400 rounded items-center flex flex-row">
+                    <img src="/HyperPage/static/img/project-1.jpg" class="h-12 w-12 rounded m-2">
+                    <div id="info-download">
+                      <a href="#" class="font-bold">
+                        new-contarcts.docx</a>
+                        <p>2.3 MB</p>
+                    </div>
+                    <div id="btn-download" class="pl-32 mr-2">
+                      <button class="mr-1"><i class="fa fa-download fa-lg" aria-hidden="true"></i></button>
+                      <button class=""><i class="fa fa-times fa-lg text-red-600" aria-hidden="true"></i></button>
+                    </div>
+                  </div>
+
+                </div>
+
+
+              </div>
+            </div>
+
+
+            <div id="comments" class="h-72 w-full">
+              <div id="comments-content" class="h-full w-full">
+                <h1 class="font-bold text-gray-900 m-4">Comments</h1>
+                <div id="comments-box1" class="flex flex-row m-4 items-center">
+                  <img src="/HyperPage/static/img/avatar-2.jpg" class="h-12 w-12 rounded-full" alt="">
+                  <div class="pl-2">
+                    <label class="font-bold text-gray-900">Arya Stark</label>
+                    <p class="text-sm">Should I review the last 3 years legal documents as well?</p>
+                  </div>
+                  <p class="text-xs pb-8">2:30pm</p>
+                </div>
+                <hr>
+                <div id="comments-box2" class="flex flex-row m-4 items-center">
+                  <img src="/HyperPage/static/img/avatar-4.jpg" class="h-12 w-12 rounded-full" alt="">
+                  <div class="pl-2">
+                    <label class="font-bold text-gray-900">Eren Jaeger</label>
+                    <p class="text-sm">@Arya FYI..I have created some general guidelines last year.
+                    </p>
+                  </div>
+                  <p class="text-xs pb-8">4:30pm</p>
+                </div>
+                <hr class="mb-4">
+                <div id="coments-edit" class="mx-4 w-96 h-62 rounded-sm  border border-borderColor">
+                  <div id="content-edit" class="flex flex-col h-36 w-full">
+                    <textarea class=" h-28 w-98 border shadow-lg rounded" placeholder="Your comment..."></textarea>
+                    <div id="bar-edit" class=" h-14 w-98 bg-editBar flex flex-row items-center justify-between">
+                      <div id="bar-tools" class="flex flex-row mx-4 text-black items-center">
+                        <a href="#" class="h-8 w-8 hover:bg-gray-300 m-1 relative">
+                          <i class="fa fa-upload absolute left-2 top-2" aria-hidden="true"></i>
+                        </a>
+                        <a href="#" class="h-8 w-8 hover:bg-gray-300 m-1 relative">
+                          <i class="fa fa-at absolute left-2 top-2" aria-hidden="true"></i>
+                        </a>
+                      </div>
+                      <button class="mr-4 text-white h-9 w-20 bg-gray-400 hover:bg-btnColor rounded-lg">Submit</button>
+                    </div>
+                  
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <!-- ----------------end-content-page---------------- -->
+    <!-- ----------------start banner---------------- -->
+
+    <style>
+      #banner-par {
+        width: 1690px;
+      }
+      #banner-hr {
+        width: 1712px;
+      }
+    </style>
+
+    <div id="banner" class="h-20 w-full bg-back relative text-gray-400">
+      <div id="banner-content-left" class="h-full w-52 bg-leftSideBar absolute">
+      </div>
+      <hr id="banner-hr" class="absolute top-4 left-52 border-0.1 border-bannerBar">
+      <div id="banner-par" class="h-1/2 flex flex-row items-center absolute top-8 left-56 justify-between">
+        <span class="font-semibold">2021 © Hyper - Coderthemes.com</span>
+        <div class="mx-10">
+          <a class="mx-4 hover:text-black" href="#">About</a>
+          <a class="mx-4 hover:text-black" href="#">Support</a>
+          <a class="mx-4 hover:text-black" href="#">Contact Us</a>
+        </div>
+        <script src="/HyperPage/static/js/dropdown.js"></script>    
+      </div>
+    </div>
+    <!-- ----------------end banner---------------- -->
+
+    </div>
+  </body>
+</html>
